@@ -22,11 +22,12 @@ jobs:
         run: |
           zypper addrepo https://download.opensuse.org/repositories/openSUSE:Leap:15.4/standard/openSUSE:Leap:15.4.repo
           zypper --gpg-auto-import-keys refresh
-          zypper --non-interactive install -y gcc-c++ make gcc automake autoconf libtool python3-pip python3-setuptools python3-wheel          
+          #zypper --non-interactive install -y gcc-c++ make gcc automake autoconf libtool python3-pip python3-setuptools python3-wheel          
           zypper addrepo https://download.opensuse.org/repositories/home:smarty12:Python/RaspberryPi_Leap_15.2/home:smarty12:Python.repo
           zypper --gpg-auto-import-keys refresh
-          zypper download python3-dev
-          rpm -i --nodeps /var/cache/zypp/packages/home_smarty12_Python/noarch/python3-dev-0.4.0-lp152.1.4.noarch.rpm
+          #zypper download python3-dev
+          #rpm -i --nodeps /var/cache/zypp/packages/home_smarty12_Python/noarch/python3-dev-0.4.0-lp152.1.4.noarch.rpm
+          zypper --non-interactive install -y python3.6-dev
           zypper --non-interactive install -y python3-dev
           echo "Building jans-linux-setup package"
           cd /suse/jans-linux-setup
