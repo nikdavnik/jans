@@ -27,7 +27,8 @@ jobs:
           zypper --gpg-auto-import-keys refresh
           echo "-------------------------**************************"
           zypper download python3-dev
-          ls -la /var/cache/zypp/packages 
+          ls -la /var/cache/zypp/packages/home_smarty12_Python
+          find /var/cache/zypp/packages -name "python3-*"
           zypper --non-interactive install -y python3-dev
           echo "Building jans-linux-setup package"
           cd /suse/jans-linux-setup
