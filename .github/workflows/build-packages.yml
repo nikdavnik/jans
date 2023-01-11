@@ -28,8 +28,7 @@ jobs:
           zypper download python3-dev
           rpm -i --nodeps /var/cache/zypp/packages/home_smarty12_Python/noarch/python3-dev-0.4.0-lp152.1.4.noarch.rpm
           zypper --non-interactive install -y python3
-          zypper --non-interactive install -y python3-dev
-          #exit 0
+          zypper --non-interactive install -y python3-devel
           echo "Building jans-linux-setup package"
           cd /suse/jans-linux-setup
           pip install shiv
