@@ -89,7 +89,7 @@ jobs:
         cd ../jans-cli-tui
         make zipapp 
         ls -la 
-        mv config-cli-tui jans-cli-tui-linux-ubuntu-X86-64.pyz
+        mv config-cli-tui.pyz jans-cli-tui-linux-ubuntu-X86-64.pyz
         sha256sum jans-cli-tui-linux-ubuntu-X86-64.pyz > jans-cli-tui-linux-ubuntu-X86-64.pyz.sha256sum
     - uses: actions/cache@v3
       id: cache-installers
