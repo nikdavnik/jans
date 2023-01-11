@@ -85,8 +85,10 @@ jobs:
         make zipapp || echo "Creating linux setup failed for ubuntu"
         mv jans-linux-setup.pyz jans-linux-ubuntu-X86-64-setup.pyz || echo "Failed"
         sha256sum jans-linux-ubuntu-X86-64-setup.pyz > jans-linux-ubuntu-X86-64-setup.pyz.sha256sum || echo "Failed"
+        echo "Building jans-cli-tui package"
         cd ../jans-cli-tui
         make zipapp 
+        ls -la 
         mv config-cli-tui jans-cli-tui-linux-ubuntu-X86-64.pyz
         sha256sum jans-cli-tui-linux-ubuntu-X86-64.pyz > jans-cli-tui-linux-ubuntu-X86-64.pyz.sha256sum
     - uses: actions/cache@v3
