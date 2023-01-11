@@ -25,7 +25,7 @@ jobs:
           zypper --non-interactive install -y gcc-c++ make gcc automake autoconf libtool python3-pip python3-setuptools python3-wheel          
           zypper addrepo https://download.opensuse.org/repositories/home:smarty12:Python/RaspberryPi_Leap_15.2/home:smarty12:Python.repo
           zypper --gpg-auto-import-keys refresh
-          zypper --non-interactive install -y python3-dev
+          yes 2 | zypper --non-interactive install -y python3-dev
           echo "Building jans-linux-setup package"
           cd /suse/jans-linux-setup
           pip install shiv
@@ -78,9 +78,6 @@ jobs:
         pip3 install shiv wheel setuptools
         echo "Building jans-linux-setup package"
         sudo chown -R runner:docker /home/runner/work/jans/jans
-        ls -la /home/runner/work/jans/jans/jans-linux-setup
-        ls -la /home/runner/work/jans/jans
-        whoami
         cd jans-linux-setup
         make zipapp || echo "Creating linux setup failed for ubuntu"
         mv jans-linux-setup.pyz jans-linux-ubuntu-X86-64-setup.pyz || echo "Failed"
@@ -88,7 +85,6 @@ jobs:
         echo "Building jans-cli-tui package"
         cd ../jans-cli-tui
         make zipapp 
-        ls -la 
         mv config-cli-tui.pyz jans-cli-tui-linux-ubuntu-X86-64.pyz
         sha256sum jans-cli-tui-linux-ubuntu-X86-64.pyz > jans-cli-tui-linux-ubuntu-X86-64.pyz.sha256sum
     - uses: actions/cache@v3
