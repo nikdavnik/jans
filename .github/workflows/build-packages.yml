@@ -77,6 +77,7 @@ jobs:
         python3 -m pip install --upgrade pip
         pip3 install shiv wheel setuptools
         echo "Building jans-linux-setup package"
+        chown -R runner:docker /home/runner/work/jans/jans
         ls -la /home/runner/work/jans/jans/jans-linux-setup
         ls -la /home/runner/work/jans/jans
         whoami
